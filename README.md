@@ -46,6 +46,10 @@ I'm not going to add an API for Yahoo! Finance or anything (yet).
 
 Oscillators are a bit more complicated, but I'm going to include them at some point. I will! Really! Don't look at me like that.
 
+> What are the dependencies?
+
+At the moment, PyTA uses Pandas and Numpy. 
+
 > "Pee-ta"?
 
 Pee-ta. It's a work in progress. I can change the name.
