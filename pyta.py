@@ -68,6 +68,8 @@ def rsi(prices, timeframe=14):
     """
     Returns the Relative Strength Index for a list of stock prices "prices"
     over a period of time "timeframe".
+    Code shamelessly stolen from Sentdex. Sorry!
+
     Accepts: Array; integer (optional).
     Return type: Array.
     """
@@ -123,6 +125,14 @@ def ema(prices, n_periods):
 
 
 def macd_line(prices):
+    """
+    Returns the Moving Average Convergence-Divergence (MACD) of a given set of price data.
+    This is the main line for plotting on a chart.
+
+    Accepts: Array.
+    Return type: Array.
+    """
+
     ema12 = pandas.ewma(prices, span=12)
     ema26 = pandas.ewma(prices, span=26)
 
@@ -131,16 +141,29 @@ def macd_line(prices):
 
 
 def macd_signal(prices):
+    """
+    Returns the MACD signal line of a given set of price data.
+
+    Accepts: Array.
+    Return type: Array.
+    """
+
     ema9 = pandas.ewma(prices, span=9)
 
     return ema9
 
 
 def macd_hist(prices):
+    """
+    Returns the MACD histogram data for a given set of price data.
+
+    Accepts: Array.
+    Return type: Array.
+    """
+
     ema9 = pandas.ewma(prices, span=9)
     ema12 = pandas.ewma(prices, span=12)
     ema26 = pandas.ewma(prices, span=26)
 
     hist = (ema12 - ema26) - ema9
     return hist
-
