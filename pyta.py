@@ -167,3 +167,6 @@ def macd_hist(prices):
 
     hist = (ema12 - ema26) - ema9
     return hist
+
+if __name__ == "__main__":
+    print "~PyTA~"
